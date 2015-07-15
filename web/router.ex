@@ -22,4 +22,8 @@ defmodule PhoenixChatExample.Router do
   # scope "/api", PhoenixChatExample do
   #   pipe_through :api
   # end
+
+  socket "/ws", PhoenixChatExample do
+    channel "rooms:*", RoomChannel
+  end
 end
